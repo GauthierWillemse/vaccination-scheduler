@@ -1,10 +1,14 @@
 .Scheduler {
-    width: 45%;
+    width: 55%;
     margin: 1rem auto;
-    padding: 2rem;
+    padding: 3rem;
+    padding-bottom: 5rem;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+    overflow-y: auto;
+    box-sizing: border-box;
   }
   
   .Scheduler h1 {
@@ -43,19 +47,38 @@
     gap: 2rem;
     width: 95%;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 1rem;
   }
   
-  .Scheduler .vaccine-field select {
-    flex-grow: 1;
-    margin-right: 1rem;
+  .Scheduler .css-b62m3t-container {
+    width: 10rem;
   }
   
   .Scheduler .vaccine-field input[type="date"] {
     width: 8rem;
   }
+
+  .Scheduler .dosedate {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Scheduler .vaccine-selection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+  .Scheduler .removeicon {
+    color: #CC0000;
+    cursor: pointer;
+    margin-left: 5px;
+  }
   
-  .Scheduler .vaccine-field button {
+  .Scheduler .removebtn {
     padding: 0.5rem;
     border: none;
     border-radius: 4px;
@@ -67,8 +90,21 @@
     margin-top: 1rem;
   }
   
-  .Scheduler .vaccine-field button:hover {
+  .Scheduler .removebtn:hover {
     background-color: #7C0A02;
+  }
+
+ .Scheduler .adddosebtn {
+    display: block;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    font-size: 1rem;
+    background-color: #022854;;
+    color: white;
+    cursor: pointer;
+    margin-top: 1rem;
   }
 
 
@@ -107,3 +143,48 @@
     background-color: #014FC6;
   }
   
+
+/* Tablet */
+@media (max-width: 800px) {
+    .Scheduler {
+        font-size: 0.8rem;
+    }
+    .Scheduler form button,
+    .Scheduler .removebtn,
+    .Scheduler .adddosebtn,
+    .Scheduler form input[type="submit"] {
+        padding: 0.4rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .Scheduler {
+        width: 100vw;
+        padding: 4rem;
+    }
+
+    .Scheduler .vaccine-field,
+    .Scheduler .input-field input[type="date"],
+    .Scheduler .vaccine-field input[type="date"],
+    .Scheduler .css-b62m3t-container,
+    .Scheduler .vaccine-selection {
+        width: 100%;
+    }
+
+    .Scheduler .vaccine-field,
+    .Scheduler .vaccine-selection {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .Scheduler form button,
+    .Scheduler .removebtn,
+    .Scheduler .adddosebtn,
+    .Scheduler form input[type="submit"] {
+        padding: 0.3rem;
+        font-size: 0.7rem;
+    }
+}
+

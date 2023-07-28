@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
+import { AiFillDelete } from 'react-icons/ai';
 import './Scheduler.css';
 
 const Scheduler = () => {
     const [dob, setDob] = useState("");
-    const [vaccines, setVaccines] = useState([]);
+    const [vaccines, setVaccines] = useState([{ name: '', doses: [{ date: "" }] }]);
 
     const vaccineOptions = [
         { value: 'diphtheria', label: 'Diphtheria' },
@@ -14,7 +15,7 @@ const Scheduler = () => {
     ];
 
     const addVaccine = () => {
-        setVaccines([...vaccines, { name: '', date: "" }]);
+        setVaccines([...vaccines, { name: '', doses: [{ date: "" }] }]);
     }
 
     const handleVaccineChange = (index, event) => {
@@ -23,17 +24,30 @@ const Scheduler = () => {
         setVaccines(newVaccines);
     }
 
-    const handleVaccineDateChange = (index, event) => {
-        const newVaccines = [...vaccines];
-        newVaccines[index].date = event.target.value;
-        setVaccines(newVaccines);
-    }
-
     const removeVaccine = (index) => {
         const newVaccines = [...vaccines];
         newVaccines.splice(index, 1);
         setVaccines(newVaccines);
     }
+
+    const addDose = (vaccineIndex) => {
+        const newVaccines = [...vaccines];
+        newVaccines[vaccineIndex].doses.push({ date: "" });
+        setVaccines(newVaccines);
+    };
+
+    const removeDose = (vaccineIndex, doseIndex) => {
+        const newVaccines = [...vaccines];
+        newVaccines[vaccineIndex].doses.splice(doseIndex, 1);
+        setVaccines(newVaccines);
+    };
+
+    const handleDoseDateChange = (vaccineIndex, doseIndex, event) => {
+        const newVaccines = [...vaccines];
+        newVaccines[vaccineIndex].doses[doseIndex].date = event.target.value;
+        setVaccines(newVaccines);
+    };
+
 
     return (
         <div className="Scheduler">
@@ -48,18 +62,33 @@ const Scheduler = () => {
                     <label>Add vaccinations:</label>
                     {vaccines.map((vaccine, index) => (
                         <div className="vaccine-field" key={index}>
-                            <Select
-                                placeholder="Select Vaccine"
-                                options={vaccineOptions}
-                                onChange={event => handleVaccineChange(index, event)}
-                            />
-                            <input
-                                type="date"
-                                value={vaccine.date}
-                                onChange={event => handleVaccineDateChange(index, event)}
-                            />
-                            <button type="button" onClick={() => removeVaccine(index)}>Remove row</button>
+                            <div className='selectionvaccine'>
+                                <label>Vaccine</label>
+                                <div className="vaccine-selection">
+                                    <Select
+                                        placeholder="Select Vaccine"
+                                        options={vaccineOptions}
+                                        onChange={event => handleVaccineChange(index, event)}
+                                    />
+                                    <AiFillDelete className="removeicon" onClick={() => removeVaccine(index)} />
+                                </div>
 
+                            </div>
+
+                            {vaccine.doses.map((dose, doseIndex) => (
+                                <div key={doseIndex}>
+                                    <label>Dose {doseIndex + 1}:</label>
+                                    <div className='dosedate' >
+                                        <input
+                                            type="date"
+                                            value={dose.date}
+                                            onChange={event => handleDoseDateChange(index, doseIndex, event)}
+                                        />
+                                        <AiFillDelete className='removeicon' onClick={() => removeDose(index, doseIndex)} />
+                                    </div>
+                                </div>
+                            ))}
+                            <button type="button" onClick={() => addDose(index)}>Add Dose</button>
                         </div>
                     ))}
                     <button type="button" onClick={addVaccine}>Add Vaccine</button>
@@ -69,6 +98,7 @@ const Scheduler = () => {
             </form>
         </div>
     );
+
 }
 
 export default Scheduler;

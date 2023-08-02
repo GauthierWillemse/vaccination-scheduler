@@ -9,6 +9,7 @@
     font-size: 1rem;
     overflow-y: auto;
     box-sizing: border-box;
+    height: 40rem;
   }
   
   .Scheduler h1 {
@@ -50,6 +51,7 @@
     justify-content: space-between;
     margin-bottom: 1rem;
   }
+
   
   .Scheduler .css-b62m3t-container {
     width: 10rem;
@@ -136,7 +138,7 @@
     background-color: #022854;;
     color: white;
     cursor: pointer;
-    margin-top: 2rem;
+    margin-top: 8rem;
   }
   
   .Scheduler form input[type="submit"]:hover {

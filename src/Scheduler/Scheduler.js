@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
 import { AiFillDelete } from 'react-icons/ai';
+import { vaccineOptions }from './Variables';
 import './Scheduler.css';
 
 const Scheduler = () => {
     const [dob, setDob] = useState("");
-    const [vaccines, setVaccines] = useState([{ name: '', doses: [{ date: "" }] }]);
-
-    const vaccineOptions = [
-        { value: 'diphtheria', label: 'Diphtheria' },
-        { value: 'hepatitis', label: 'Hepatitis' },
-        { value: 'pertussis', label: 'Pertussis' },
-        { value: 'tetanus', label: 'Tetanus' },
-    ];
+    const [vaccines, setVaccines] = useState([
+        {
+            name: '',
+            doses: [{ date: "" }]
+        }
+    ]);
 
     const addVaccine = () => {
         setVaccines([...vaccines, { name: '', doses: [{ date: "" }] }]);

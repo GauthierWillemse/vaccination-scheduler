@@ -1,192 +1,251 @@
 .Scheduler {
-    width: 55%;
-    margin: 1rem auto;
-    padding: 3rem;
-    padding-bottom: 5rem;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    font-size: 1rem;
-    overflow-y: auto;
-    box-sizing: border-box;
-    height: 40rem;
-  }
-  
-  .Scheduler h1 {
-    text-align: center;
-    color: #022854;;
-  }
-  
-  .Scheduler .input-field {
-    margin-bottom: 2rem;
-  }
-  
-  .Scheduler .input-field label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    color: #022854;
-  }
-  
-  .Scheduler .input-field input[type="date"] {
-    display: block;
-    width: 8rem;
-    padding: 0.5rem;
-    border: none;
-    border-bottom: 2px solid #022854;
-    outline: none;
-    font-size: 1rem;
-  }
-  
-  .Scheduler .input-field input[type="date"]:focus {
-    border-bottom: 2px solid #022854;;
-    color: #022854;;
-  }
-  
-  .Scheduler .vaccine-field {
-    display: flex;
-    gap: 2rem;
-    width: 95%;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-  }
-
-  
-  .Scheduler .css-b62m3t-container {
-    width: 10rem;
-  }
-  
-  .Scheduler .vaccine-field input[type="date"] {
-    width: 8rem;
-  }
-
-  .Scheduler .dosedate {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .Scheduler .vaccine-selection {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+  width: 65%;
+  margin: 1rem auto;
+  padding: 3rem;
+  padding-bottom: 5rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  overflow-y: auto;
+  box-sizing: border-box;
+  height: 40rem;
 }
-  .Scheduler .removeicon {
-    color: #CC0000;
-    cursor: pointer;
-    margin-left: 5px;
-  }
-  
-  .Scheduler .removebtn {
-    padding: 0.5rem;
-    border: none;
-    border-radius: 4px;
-    outline: none;
-    font-size: 1rem;
-    background-color: #CC0000;
-    color: white;
-    cursor: pointer;
-    margin-top: 1rem;
-  }
-  
-  .Scheduler .removebtn:hover {
-    background-color: #7C0A02;
-  }
 
- .Scheduler .adddosebtn {
-    display: block;
-    padding: 0.5rem;
-    border: none;
-    border-radius: 4px;
-    outline: none;
-    font-size: 1rem;
-    background-color: #022854;;
-    color: white;
-    cursor: pointer;
-    margin-top: 1rem;
-  }
+.Scheduler h1 {
+  text-align: center;
+  color: #022854;
+  ;
+}
+
+.Scheduler .doses-container {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.Scheduler .dose-item {
+  width: 10rem;
+}
 
 
-  .Scheduler form button {
-    display: block;
-    padding: 0.5rem;
-    border: none;
-    border-radius: 4px;
-    outline: none;
-    font-size: 1rem;
-    background-color: #022854;;
-    color: white;
-    cursor: pointer;
-    margin-top: 1rem;
-  }
-  
-  .Scheduler form button:hover {
-    background-color: #014FC6
-  }
-  
-  .Scheduler form input[type="submit"] {
-    display: block;
-    width: 100%;
-    padding: 0.5rem;
-    border: none;
-    border-radius: 4px;
-    outline: none;
-    font-size: 1rem;
-    background-color: #022854;;
-    color: white;
-    cursor: pointer;
-    margin-top: 8rem;
-  }
-  
-  .Scheduler form input[type="submit"]:hover {
-    background-color: #014FC6;
-  }
-  
+.Scheduler .input-field {
+  margin-bottom: 2rem;
+}
+
+.Scheduler .input-field label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #022854;
+}
+
+.Scheduler .input-field input[type="date"] {
+  display: block;
+  width: 8rem;
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 2px solid #022854;
+  outline: none;
+  font-size: 1rem;
+}
+
+.Scheduler .input-field input[type="date"]:focus {
+  border-bottom: 2px solid #022854;
+  ;
+  color: #022854;
+  ;
+}
+
+.Scheduler .vaccine-field {
+  display: flex;
+  gap: 2rem;
+  width: 95%;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+
+.Scheduler .css-b62m3t-container {
+  width: 10rem;
+}
+
+.Scheduler .vaccine-field input[type="date"] {
+  width: 8rem;
+}
+
+.Scheduler .dosedate {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.Scheduler .vaccine-selection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.Scheduler .removeicon {
+  color: #CC0000;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+/* Button styling */
+.Scheduler form button,
+.Scheduler .removebtn,
+.Scheduler .adddosebtn,
+.Scheduler form input[type="submit"] {
+    flex-shrink: 0; 
+    width: 120px;   
+    height: 40px;   
+}
+
+
+.Scheduler .removebtn {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  font-size: 1rem;
+  background-color: #CC0000;
+  color: white;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.Scheduler .removebtn:hover {
+  background-color: #7C0A02;
+}
+
+.Scheduler .adddosebtn {
+  display: block;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  font-size: 1rem;
+  background-color: #022854;
+  ;
+  color: white;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+
+.Scheduler form button {
+  display: block;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  font-size: 1rem;
+  background-color: #022854;
+  ;
+  color: white;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.Scheduler form button:hover {
+  background-color: #014FC6
+}
+
+.Scheduler form input[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  font-size: 1rem;
+  background-color: #022854;
+  ;
+  color: white;
+  cursor: pointer;
+  margin-top: 8rem;
+}
+
+.Scheduler form input[type="submit"]:hover {
+  background-color: #014FC6;
+}
+
+
+.error-message {
+  color: #C83D3D;
+  background-color: #ECABAB;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.age-display {
+  background-color: #DFFFD6;
+  color: #008000;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.vaccine-date {
+  background-color: #D6E5FF;
+  color: #0000A0;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
 
 /* Tablet */
 @media (max-width: 800px) {
-    .Scheduler {
-        font-size: 0.8rem;
-    }
-    .Scheduler form button,
-    .Scheduler .removebtn,
-    .Scheduler .adddosebtn,
-    .Scheduler form input[type="submit"] {
-        padding: 0.4rem;
-        font-size: 0.8rem;
-    }
+  .Scheduler {
+    font-size: 0.8rem;
+  }
+
+  .Scheduler form button,
+  .Scheduler .removebtn,
+  .Scheduler .adddosebtn,
+  .Scheduler form input[type="submit"] {
+    padding: 0.4rem;
+    font-size: 0.8rem;
+  }
 }
 
 /* Mobile */
 @media (max-width: 600px) {
-    .Scheduler {
-        width: 100vw;
-        padding: 4rem;
-    }
+  .Scheduler {
+    width: 100vw;
+    padding: 4rem;
+  }
 
-    .Scheduler .vaccine-field,
-    .Scheduler .input-field input[type="date"],
-    .Scheduler .vaccine-field input[type="date"],
-    .Scheduler .css-b62m3t-container,
-    .Scheduler .vaccine-selection {
-        width: 100%;
-    }
+  .Scheduler .vaccine-field,
+  .Scheduler .input-field input[type="date"],
+  .Scheduler .vaccine-field input[type="date"],
+  .Scheduler .css-b62m3t-container,
+  .Scheduler .vaccine-selection {
+    width: 100%;
+  }
 
-    .Scheduler .vaccine-field,
-    .Scheduler .vaccine-selection {
-        flex-direction: column;
-        align-items: stretch;
-    }
+  .Scheduler .vaccine-field,
+  .Scheduler .vaccine-selection {
+    flex-direction: column;
+    align-items: stretch;
+  }
 
-    .Scheduler form button,
-    .Scheduler .removebtn,
-    .Scheduler .adddosebtn,
-    .Scheduler form input[type="submit"] {
-        padding: 0.3rem;
-        font-size: 0.7rem;
-    }
+  .Scheduler form button,
+  .Scheduler .removebtn,
+  .Scheduler .adddosebtn,
+  .Scheduler form input[type="submit"] {
+    padding: 0.3rem;
+    font-size: 0.7rem;
+  }
 }
-

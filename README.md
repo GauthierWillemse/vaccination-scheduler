@@ -29,4 +29,4 @@ The calculated schedule is then displayed to the user in a readable format, prov
 
 ## Deployment
 
-This project is deployed using GitHub Pages. The live application can be accessed at `tbd`.
+This project is not yet deployed. 
